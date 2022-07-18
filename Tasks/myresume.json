@@ -1,0 +1,78 @@
+{
+    "PersonalInfo":{
+        "Name": "PONRAJ M",
+        "Email": "ponrajsm@gmail.com",
+        "Mobile": "9791594408",
+        "Address": {
+            "DoorNo": "2",
+            "Street": "XXXXX Street",
+            "Location": "Ashok Nagar",
+            "City": "Chennai",
+            "State": "Tamilnadu"
+        }
+    },
+    "CarrerVision":{
+        "Vision": "To give my best in my professional pursuit for overall benefit and growth of the company that I serve by facing the challenges. I will show my caliber and gain some experience."
+    },
+    "OverallExperience": "5",
+    "ProfessionExperience":[
+        {
+            "CompanyName": "XXXXX",
+            "Designation": "PHP Developer",
+            "FromDate": "2016-09-01",
+            "ToDate": "2020-03-31",
+            "Location": "Chennai"
+        },
+        {
+            "CompanyName": "XXXXX",
+            "Designation": "PHP Developer",
+            "FromDate": "2020-04-02",
+            "ToDate": "-",
+            "Location": "Chennai"
+        }
+    ],
+    "Projects":[
+        {
+            "ProjectName": "Digital Sourcing",
+            "Description": "Digital Sourcing, processing and application process. Digital Sourcing is designed to manage loan origination, fulfillment, pricing and eligibility and document management.",
+            "TechnologyUse": [
+                {
+                    "FrontEnd": "HTML,CSS,jQuery",
+                    "BackEnd": "PHP",
+                    "Database": "MySQL"
+                }
+            ]
+        },
+        {
+            "ProjectName": "Loan Origination System",
+            "Description": "Loan Origination System processing and application process. Loan Origination System is designed to manage loan origination, fulfillment, pricing and eligibility and document management.",
+            "TechnologyUse": [
+                {
+                    "FrontEnd": "HTML,CSS,jQuery",
+                    "BackEnd": "PHP",
+                    "Database": "MySQL"
+                }
+            ]
+        }
+    ],
+    "TechnicalSkills":"PHP, HTML, CSS, JavaScript,JQuery",
+    "EducationQualification":[
+        {
+            "Institiute": "SIT",
+            "Department": "B.Tech",
+            "Category": "Information Technology",
+            "Location": "Madurai",
+            "CGPA": "7.57"
+        },
+        {
+            "SchoolName": "KVS",
+            "HSCYearPassed": "",
+            "Percentage": "80.41%"
+        },
+        {
+            "SchoolName": "KVS",
+            "SSCLYearPassed": "",
+            "Percentage": "78.40%"
+        }
+    ]
+}
