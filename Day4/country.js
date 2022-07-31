@@ -9,12 +9,12 @@ request.onload = () => {
 
     let result = JSON.parse(request.response);
     
-    /*********************** COUNTRY FLAG SECTION *************************/
-    for(let i = 0;i <= result.length;i++){
-        console.log("PNG Image = "+result[i].flags.png);
-        console.log("SVG Image = "+result[i].flags.svg);
+    /*********************** COUNTRY NAME, REGION, SUB REGION AND POPULATION *************************/
+    for(let i of result){
+        //console.log(result[i]);
+        console.log("Country Name = "+i.name+"; Region = "+i.region+"; Sub Region = "+i.subregion+"; Population = "+i.population);
     }
-    /*********************** COUNTRY FLAG SECTION *************************/
+    /*********************** COUNTRY NAME, REGION, SUB REGION AND POPULATION *************************/
 }
 
 request.onerror = () => {
