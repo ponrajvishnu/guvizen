@@ -1,12 +1,23 @@
-let arr = [1,2,2,1];
+let arr = [1,11,343,200,798,80108,8008,999,7171,700007];
 
 let a = (arr) => {
-    for(let i = 0;i < arr.length/2;i++){
-        if(arr[i] !== arr[arr.length - i -1]){
-            return('false');
+    let res = '';
+    let ans = '';
+    
+    for(let i = 0;i < arr.length;i++){
+        res += arr[i];
+        var count = 0;
+        for(let j = 0;j < res.length;j++){
+            if(res[j] === res[((res.length - 1) - j)]){
+                count++;
+            }
         }
+        if(count === res.length){
+            ans += res+" ";
+        }
+        res = '';
     }
-    return('true');
+    return ans;
 }
 
 console.log(a(arr));

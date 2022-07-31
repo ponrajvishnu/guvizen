@@ -1,6 +1,7 @@
-let arr = [1,2,3,4,5,6,7,8,9,11];
+let arr = [-1,-2,-3,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-let a = function(arr) {
+
+((arr) => {
     var res = '';
     for(let i = 0;i < arr.length;i++){
         var count = 0;
@@ -16,7 +17,8 @@ let a = function(arr) {
             res += arr[i]+" ";
         }
     }
-    return res;
-}
+    console.log(res);
+})(arr);
 
-console.log(a(arr));
+// let result = arr.filter(a);
+// console.log(result);
