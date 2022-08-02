@@ -1,46 +1,16 @@
-let a = [1,2,3,7];
-let b = [4,5,6,8];
+const arr1 = [1,12,15,26,38];
+const arr2 = [2,13,17,30,45];
 
 ((a,b) => {
-    let c = [];
-    let n = a.length;
-    let p = b.length;
-    let i = 0;
-    let j = 0;
-    let med = 0;
-    while(i<n && j<p)
+    let c = [...a, ...b].sort((a, b) => a - b);
+    //console.log(c);
+    const half = c.length / 2 | 0;
+    // console.log(half);
+    // console.log(c.length);
+    if(c.length % 2)
     {
-        if(a[i] < b[j])
-        {
-            c.push(a[i]);
-            i++;
-        }else
-        {
-            c.push(b[j]);
-            j++;
-        }
+        console.log(c[half]);
+    }else{
+        console.log((c[half] + c[half - 1]) / 2);
     }
-
-    if(i < n)
-    {
-        for(let k = i;k < n;k++)
-        {
-            c.push(a[k]);
-        }
-    }else if(j < p)
-    {
-        for(let m = j;m < p;m++)
-        {
-            c.push(b[m]);
-        }
-    }
-
-    if(c.length % 2 === 0)
-    {
-        med = (c[(c.length/2)-1]+c[c.length/2])/2;
-    }else
-    {
-        med = c[Math.floor(c.length/2)];
-    }
-    console.log(med);
-})(a,b);
+})(arr1,arr2);
