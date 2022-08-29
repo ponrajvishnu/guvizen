@@ -95,8 +95,44 @@ if(locks && " " || undefined ){
 console.log(msg);
 
 
-//You can change only 2 characters
+//You can change only 2 characters - Correct Answer (Replace the -- after the i)
 let i = 3;
 while (i) {
-  console.log( --i );
+  console.log( i-- );
 }
+
+
+// Change the code to print 1 to 10 in 4 lines - Answer
+let val = 10;
+for(let i = 1;i <= val;i++){
+    console.log(i);
+} 
+
+
+//Change the code to print even numbers - Answer
+let num = 20;
+for(let i = 0;i <= num;i++){
+    if(i % 2 === 0){
+        console.log(i);
+    }
+}
+
+
+// Change the code to print all the gifts - Answer
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+
+
+var lemein = "0";
+var lemeout = 0;
+var msgs = "";
+if(lemein){
+    msgs += "hi";
+}
+if(lemeout){
+    msgs += 'Hello';
+}
+console.log(msgs);
+//Answer - "hi". lemein is contain number(0) but it placed within double quotes so its consider string. lemeout have number is zero. In if condition consider lemeout value is false bcoz it have value is zero.   
