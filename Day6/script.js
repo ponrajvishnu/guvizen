@@ -214,3 +214,14 @@ ar.reduce((a,b) => {
     return ans = parseInt(a) + parseInt(b);
 });
 console.log(ans);
+
+
+var sum = 100;
+for(let i = 0;i < numsArr.length;i++){
+    if(numsArr[i] % 2 != 0){
+        sum += parseInt(numsArr[i]);
+    }else{
+        sum -= parseInt(numsArr[i]);
+    }
+}
+console.log(sum);
