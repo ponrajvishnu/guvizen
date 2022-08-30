@@ -136,3 +136,81 @@ if(lemeout){
 }
 console.log(msgs);
 //Answer - "hi". lemein is contain number(0) but it placed within double quotes so its consider string. lemeout have number is zero. In if condition consider lemeout value is false bcoz it have value is zero.   
+
+
+// Write a code to print the numbers in the array
+// Output: 1234567891011
+let str = '';
+for(let i = 1; i <= 11;i++ ){
+    str += i;
+}
+console.log(str);
+
+
+// Write a code to print the numbers in the array
+// Output: 1,2,3,4,5,6,7,8,9,10,11
+let nums = 11;
+let str1 = '';
+for(let i = 1; i <= nums;i++ ){
+    if(i == nums){
+        str1 += i;
+    }else{
+        str1 += i + ',';
+    }
+}
+console.log(str1.trim());
+
+//Write a code to print from last to first with spaces (Make sure there is no space after the last element 1)
+//Output: 11 10 9 8 7 6 5 4 3 2 1
+let arr = '';
+for(let i = nums;i > 0;i--){
+    arr += i + ' ';
+}
+console.log(arr);
+
+
+// Write a code to replace the array value — If the number is even, replace it with ‘even’.
+// Output:[ 1, “even”, 3, “even”, 5, “even”, 7, “even”, 9, “even”, … ]
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+let arrs = [];
+for(let i = 1;i <= numsArr.length;i++){
+    if(i % 2 === 0){
+        arrs.push('even');
+    }else{
+        arrs.push(i);
+    }
+}
+console.log(arrs);
+
+
+// Write a code to replace the array value — If the index is even, replace it with ‘even’.
+// Output: [ “even”, 2, “even”, 4, “even”, 6, “even”, 8, “even”, 10, … ]
+let arrval = [];
+for(let i = 1;i <= numsArr.length;i++){
+    if(numsArr[i] % 2 == 0){
+        arrval.push('even');
+    }else{
+        arrval.push(i);
+    }
+}
+console.log(arrval);
+
+let vals = '';
+numsArr.reduce((a,b) => {
+    return vals = parseInt(a) + parseInt(b);
+},0);
+console.log(vals);
+
+let ar = [];
+let ans = '';
+numsArr.filter((x) => {
+    if(x % 2 === 0){
+        ar.push(x);
+    }
+});
+
+ar.reduce((a,b) => {
+    return ans = parseInt(a) + parseInt(b);
+});
+console.log(ans);
