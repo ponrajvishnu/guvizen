@@ -14,7 +14,7 @@ lname = "Geek";
 admin = fname + lname;
 
 // alert(admin);
-
+// alert("test");
 // alert(`Hello ${admin}`);
 
 // let a = prompt("Enter First Number");
