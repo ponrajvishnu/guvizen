@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Pagination</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="title">DOM - Pagination</h1>
+            <p id="description">Pagination in DOM Manipulation</p>
+            <div class="list table-responsive" id="list">
+                <table id="table" class="table table-bordered">
+                    <thead>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </thead>
+                </table>
+            </div>
+            Selected : <p id="page-select"></p>
+            <div class="pagination-btn d-flex justify-content-center" id="buttons">
+                <button onclick="firstPage(this)" id="first" class="page-btn">First</button>
+                <button onclick="prevPage(this)" id="btn_prev" class="page-btn">Prev</button>
+                <div class="pagenumbers" id="pagination"></div>
+                <button onclick="nextPage(this)" id="btn_next" class="page-btn">Next</button>
+                <button onclick="lastPage(this)" id="last" class="page-btn">Last</button>
+            </div>
+        </div>
+        <script src="script.js"></script>   
+        <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>     
+    </body>
+</html>

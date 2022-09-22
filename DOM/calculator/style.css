@@ -1,0 +1,74 @@
+.calc-section{
+    width: 25%;
+    margin: 0 auto;
+    border: 1px solid #CCC;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px #dadada;
+}
+#input-area, #text-area{
+    text-align: center;
+}
+.btn-section{
+    padding: 10px 25px;
+    border: 1px solid #f5f5f5;
+    background: #FFF;
+    min-height: 60px;
+    width: 22%;
+    background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+}
+#result{
+    width: 90%;
+    min-height: 40px;
+    border: 1px solid #CCC;
+    background: #8fbc8f;
+    text-align: right;
+    box-shadow: 1px 1px 1px 1px #dcf4dc;
+    font-size: 25px;
+}
+.part-section, #section-last, #text-area {
+    margin: 0.5rem;
+}
+.part-section, #section-last{
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+.equal-btn{
+    width: 45%;
+    background: #27A6E0;
+}
+.operation-btn {
+    color: #fff;
+    background: #EDBB25;
+}
+#clear{
+    background: #e90000;
+    color: #FFF;
+}
+#backspace {
+    background: #ffdab9;
+}
+
+/************** Responsive Section *******************/
+@media screen and (max-width: 1024px){
+    .calc-section{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 580px){
+    .calc-section{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 380px){
+    .calc-section{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 320px){
+    #result{
+        width: 95%;
+    }
+}
+/************** Responsive Section *******************/

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+    </head>
+    <body>
+        <div class="body-container">
+            <h1 id="title" style="text-align:center;">Calculator</h1>
+            <p id="description" style="text-align:center;">DOM Calculator - JavaScript</p>
+            <div class="calc-section">
+                <div id="result-area">
+                    <p id="text-area"><input type="text" id="result" value=""></p>
+                </div>
+                <div id="input-area">
+                    <div id="section-first" class="part-section">
+                        <button id="clear" class="btn-section" onclick="clearfunction(this)" value="">C</button>
+                        <button id="backspace" class="btn-section" onclick="backspace(this)" value=""><img src="arrow.png" style="width:1rem"></button>
+                        <button id="dot" class="btn-section" onclick="keyclick(this)" value=".">.</button>
+                        <button id="division" class="btn-section operation-btn" onclick="keyfunction(this)" value="/">/</button>
+                    </div>
+                    <div id="section-two" class="part-section">
+                        <button id="1" class="btn-section" onclick="keyclick(this)" value="1">1</button>
+                        <button id="2" class="btn-section" onclick="keyclick(this)" value="2">2</button>
+                        <button id="3" class="btn-section" onclick="keyclick(this)" value="3">3</button>
+                        <button id="multiply" class="btn-section operation-btn" onclick="keyfunction(this)" value="*">*</button>
+                    </div>
+                    <div id="section-three" class="part-section">
+                        <button id="4" class="btn-section" onclick="keyclick(this)" value="4">4</button>
+                        <button id="5" class="btn-section" onclick="keyclick(this)" value="5">5</button>
+                        <button id="6" class="btn-section" onclick="keyclick(this)" value="6">6</button>
+                        <button id="subtract" id="" class="btn-section operation-btn" onclick="keyfunction(this)" value="-">-</button>
+                    </div>
+                    <div id="section-four" class="part-section">
+                        <button id="7" class="btn-section" onclick="keyclick(this)" value="7">7</button>
+                        <button id="8" class="btn-section" onclick="keyclick(this)" value="8">8</button>
+                        <button id="9" class="btn-section" onclick="keyclick(this)" value="9">9</button>
+                        <button id="add" class="btn-section operation-btn" onclick="keyfunction(this)" value="+">+</button>
+                    </div>
+                    <div id="section-last">
+                        <button id="zero" class="btn-section" onclick="keyclick(this)" value="0">0</button>
+                        <button id="zerotwice" class="btn-section" onclick="keyclick(this)" value="00">00</button>
+                        <button id="equal"  class="btn-section equal-btn" onclick="getresult(this)">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+    </body>
+</html>

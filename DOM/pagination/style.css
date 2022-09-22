@@ -1,0 +1,43 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container .list .item {
+	padding: 15px;
+	border-bottom: 1px solid #CCC;
+}
+.container .list .item:last-of-type {
+	border-bottom: none;
+}
+.container .list .item:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+.pagination-btn{
+    display: flex;
+    justify-content: center;
+}
+.page-btn{
+    color: #7d7dcf;
+    padding: 10px 25px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    height: 40px;
+    width: 15%;
+    cursor: pointer;
+}
+.page-btn.active{
+    background-color: #7d7dcf;
+    color: black;
+}
+.page-btn:hover{
+    background-color: #bfbff1;
+}
+ 
+.container .list {
+	width: 100%;
+	max-width: 768px;
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	margin: 25px;
+}
