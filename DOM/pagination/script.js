@@ -169,33 +169,36 @@ function DisplayList (items, contentarea, rows_per_page, page) {
 	let start = rows_per_page * page;
 	let end   = start + rows_per_page;
 
-    pageSelected.style.color = '#FEA219';
-    pageSelected.innerText = page + 1; // selected page
+  pageSelected.style.color = '#FEA219';
+  pageSelected.innerText = page + 1; // selected page
 
-	let paginatedItems = items.slice(start, end);
+  let paginatedItems = items.slice(start, end);
 
-    let headcontent = document.createElement('thead');
-    let headName = document.createElement('th');
-    let headEmail = document.createElement('th');
-    headcontent.append(headName);
-    headcontent.append(headEmail);
-    headName.append('Name');
-    headEmail.append('Email');
-    contentarea.append(headcontent);
+  let headcontent = document.createElement('thead');
+  let headName = document.createElement('th');
+  let headEmail = document.createElement('th');
+  headcontent.append(headName);
+  headcontent.append(headEmail);
+  headName.append('Name');
+  headEmail.append('Email');
+  contentarea.append(headcontent);
+
+  let bodyelement = document.createElement('tbody');
 
 	for (let i = 0; i < paginatedItems.length; i++) {
 		let item_element = document.createElement('tr');
-        let td = document.createElement("td");
-        let sectd = document.createElement("td");
-        let nameText = document.createTextNode(paginatedItems[i].name);
-        let emailText = document.createTextNode(paginatedItems[i].email);
-		item_element.classList.add('item');
-        item_element.append(td);
-        item_element.append(sectd);
-        td.append(nameText);
-        sectd.append(emailText);
-		
-		contentarea.append(item_element);
+    let td = document.createElement("td");
+    let sectd = document.createElement("td");
+    let nameText = document.createTextNode(paginatedItems[i].name);
+    let emailText = document.createTextNode(paginatedItems[i].email);
+    item_element.classList.add('item');
+    item_element.append(td);
+    item_element.append(sectd);
+    td.append(nameText);
+    sectd.append(emailText);
+
+    bodyelement.append(item_element);
+    contentarea.append(bodyelement);
 	}
 }
 
