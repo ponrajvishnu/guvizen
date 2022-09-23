@@ -101,12 +101,12 @@ const list_items = [
     }
 ];
 
-const list_element       = document.getElementById('table');
-const pagination_element = document.querySelector('#pagination');
-let btnNext = document.querySelector("#btn_next");
-let btnPrev = document.querySelector("#btn_prev");
-let btnLast = document.querySelector("#last");
-let pageSelected = document.querySelector("#page-select");
+let list_element       = document.getElementById('table');
+let pagination_element = document.querySelector('#pagination');
+let btnNext            = document.querySelector("#btn_next");
+let btnPrev            = document.querySelector("#btn_prev");
+let btnLast            = document.querySelector("#last");
+let pageSelected       = document.querySelector("#page-select");
 
 let current_page = 1;
 let rows = 2;
@@ -131,35 +131,38 @@ function lastPage(e){
 
 function prevPage(e)
 {
-    if (current_page > 1) {
-        current_page--;
-        DisplayList(list_items, list_element, rows, current_page);
-        SetupPagination(list_items, pagination_element, rows);
-        btnPrev.style.visibility = "visible";
-    }
-    if(current_page == 1){
-        btnPrev.style.visibility = "hidden";
-    }
-    let page_count = Math.ceil(list_items.length / rows);
-    if(current_page == page_count){
-        btnNext.style.visibility = "hidden";
-    }else{
-        btnNext.style.visibility = "visible";
-    }
+  if (current_page > 1) {
+    current_page--;
+    DisplayList(list_items, list_element, rows, current_page);
+    SetupPagination(list_items, pagination_element, rows);
+    btnPrev.style.visibility = "visible";
+  }
+  
+  if(current_page == 1){
+    btnPrev.style.visibility = "hidden";
+  }
+  
+  let page_count = Math.ceil(list_items.length / rows);
+  if(current_page == page_count){
+    btnNext.style.visibility = "hidden";
+  }else{
+    btnNext.style.visibility = "visible";
+  }
 }
 
 function nextPage(e)
 {
-    let page_count = Math.ceil(list_items.length / rows);
-    if (current_page < page_count) {
-        current_page++;
-        DisplayList(list_items, list_element, rows, current_page);
-        SetupPagination(list_items, pagination_element, rows);
-        btnPrev.style.visibility = "visible";
-    }
-    if(current_page == page_count){
-        btnNext.style.visibility = "hidden";
-    }
+  let page_count = Math.ceil(list_items.length / rows);
+  if (current_page < page_count) {
+    current_page++;
+    DisplayList(list_items, list_element, rows, current_page);
+    SetupPagination(list_items, pagination_element, rows);
+    btnPrev.style.visibility = "visible";
+  }
+
+  if(current_page == page_count){
+    btnNext.style.visibility = "hidden";
+  }
 }
 
 function DisplayList (items, contentarea, rows_per_page, page) {
@@ -185,8 +188,8 @@ function DisplayList (items, contentarea, rows_per_page, page) {
 
   let bodyelement = document.createElement('tbody');
 
-	for (let i = 0; i < paginatedItems.length; i++) {
-		let item_element = document.createElement('tr');
+  for (let i = 0; i < paginatedItems.length; i++) {
+    let item_element = document.createElement('tr');
     let td = document.createElement("td");
     let sectd = document.createElement("td");
     let nameText = document.createTextNode(paginatedItems[i].name);
@@ -199,7 +202,7 @@ function DisplayList (items, contentarea, rows_per_page, page) {
 
     bodyelement.append(item_element);
     contentarea.append(bodyelement);
-	}
+  }
 }
 
 function SetupPagination (items, contentarea, rows_per_page) {
@@ -213,40 +216,40 @@ function SetupPagination (items, contentarea, rows_per_page) {
 }
 
 function PaginationButton (page, items) {
-	let button = document.createElement('button');
-    button.classList.add('page-btn');
-	button.innerText = page;
-    
-	if (current_page == page){
-        button.classList.add('active'); 
+  let button = document.createElement('button');
+  button.classList.add('page-btn');
+  button.innerText = page;
+
+  if (current_page == page){
+    button.classList.add('active'); 
+  }
+  btnPrev.style.visibility = "hidden";
+  btnNext.style.visibility = "visible";
+
+  button.addEventListener('click', function () {
+    current_page = page;
+    if(current_page > 1){
+      btnPrev.style.visibility = "visible";
+    }else{
+      btnPrev.style.visibility = "hidden";
     }
-    btnPrev.style.visibility = "hidden";
-    btnNext.style.visibility = "visible";
 
-	button.addEventListener('click', function () {
-		current_page = page;
-        if(current_page > 1){
-            btnPrev.style.visibility = "visible";
-        }else{
-            btnPrev.style.visibility = "hidden";
-        }
+    let page_count = Math.ceil(items.length / rows);
+    if(current_page == page_count){
+      btnNext.style.visibility = "hidden";
+    }else{
+      btnNext.style.visibility = "visible";
+    }
 
-        let page_count = Math.ceil(items.length / rows);
-        if(current_page == page_count){
-            btnNext.style.visibility = "hidden";
-        }else{
-            btnNext.style.visibility = "visible";
-        }
+    DisplayList(items, list_element, rows, current_page);
 
-		DisplayList(items, list_element, rows, current_page);
+    let current_btn = document.querySelector('.pagenumbers button.active');
+    current_btn.classList.remove('active');
 
-		let current_btn = document.querySelector('.pagenumbers button.active');
-		current_btn.classList.remove('active');
+    button.classList.add('active');
+  });
 
-		button.classList.add('active');
-	});
-
-	return button;
+  return button;
 }
 
 DisplayList(list_items, list_element, rows, current_page);
