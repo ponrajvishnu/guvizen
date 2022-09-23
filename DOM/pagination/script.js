@@ -48,6 +48,56 @@ const list_items = [
       "id": "10",
       "name": "Marvin Fay",
       "email": "Osbaldo58@hotmail.com"
+    },
+    {
+      "id": "11",
+      "name": "Torrance Rau",
+      "email": "Orin45@gmail.com"
+    },
+    {
+      "id": "12",
+      "name": "Harold Gutmann MD",
+      "email": "Alyce.Stracke37@yahoo.com"
+    },
+    {
+      "id": "13",
+      "name": "Taryn Torphy",
+      "email": "Dean_Breitenberg71@hotmail.com"
+    },
+    {
+      "id": "14",
+      "name": "Bryana Lang",
+      "email": "Tatum.Ullrich@yahoo.com"
+    },
+    {
+      "id": "15",
+      "name": "Nyasia Green DDS",
+      "email": "Dino83@gmail.com"
+    },
+    {
+      "id": "16",
+      "name": "Nasir Gerhold",
+      "email": "Lilian_Bashirian8@hotmail.com"
+    },
+    {
+      "id": "17",
+      "name": "Raymundo Ritchie PhD",
+      "email": "Antwan.Schoen15@yahoo.com"
+    },
+    {
+      "id": "18",
+      "name": "Delmer Marvin",
+      "email": "Kiera62@yahoo.com"
+    },
+    {
+      "id": "19",
+      "name": "Rachel Wilkinson",
+      "email": "Foster_Conroy@gmail.com"
+    },
+    {
+      "id": "20",
+      "name": "Gladys Howell",
+      "email": "Constance.Labadie10@yahoo.com"
     }
 ];
 
@@ -124,15 +174,26 @@ function DisplayList (items, contentarea, rows_per_page, page) {
 
 	let paginatedItems = items.slice(start, end);
 
+    let headcontent = document.createElement('thead');
+    let headName = document.createElement('th');
+    let headEmail = document.createElement('th');
+    headcontent.append(headName);
+    headcontent.append(headEmail);
+    headName.append('Name');
+    headEmail.append('Email');
+    contentarea.append(headcontent);
+
 	for (let i = 0; i < paginatedItems.length; i++) {
 		let item_element = document.createElement('tr');
         let td = document.createElement("td");
-        let nameText = document.createTextNode(paginatedItems[i].name+' - ');
+        let sectd = document.createElement("td");
+        let nameText = document.createTextNode(paginatedItems[i].name);
         let emailText = document.createTextNode(paginatedItems[i].email);
 		item_element.classList.add('item');
         item_element.append(td);
+        item_element.append(sectd);
         td.append(nameText);
-        td.append(emailText);
+        sectd.append(emailText);
 		
 		contentarea.append(item_element);
 	}
