@@ -19,9 +19,9 @@ let callfun = () => {
                                         document.querySelector("#text-content").innerText = 2;
                                         return setTimeout(() => {
                                             document.querySelector("#text-content").innerText = 1;
-                           
                                             return setTimeout(() => {
                                                 document.querySelector("#text-content").innerText = 'Happy Independence Day';
+                                                callfun();
                                             },1000)
                                         },1000)
                                     },1000)
