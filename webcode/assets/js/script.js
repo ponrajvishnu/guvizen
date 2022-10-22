@@ -17,7 +17,7 @@ let fetchData = async (val = '') => {
         document.querySelector(".main-content").style.opacity = 1;
         let head = document.createElement('h3');
         head.setAttribute('class','text-center')
-        head.innerHTML = 'Brewery Information';
+        head.innerHTML = 'Breweries Information';
         document.querySelector('.main-content').append(head);
         
         let searchdiv = document.createElement('div');
