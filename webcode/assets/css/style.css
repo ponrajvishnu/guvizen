@@ -1,0 +1,90 @@
+body{
+    padding: 10px;
+    background-color: #f2f3f7;
+}
+hr{
+    color: #0196e3;
+}
+.head-title{
+    color: #47b5ed;
+}
+.abstract-sec {
+    padding: 20px;
+}
+.abstract-sec h3{
+    color: #36187d;
+}
+.abstract-para{
+    text-indent: 30px;
+    color: #6c758f;
+}
+.search-section{
+    width: 30% !important;
+    margin: 0 auto;
+}
+.search-value p{
+    float: right;
+}
+.main-content{
+    padding: 10px;
+}
+.main-content h3{
+    color: #36187d;
+}
+.search-value p{
+    color: #6c758f;
+}
+.brewery-info{
+    margin-top: 10px !important;
+    padding: 0 2rem
+}
+.content-sec{
+    padding: 2rem;
+    box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #ffffff;
+    border-radius: 3rem;
+    margin-top: 5%;
+    min-height: 345px;
+}
+.info-cls {
+    color: #424f56 !important;
+}
+.ans-cls{
+    color: #36187d;
+    font-weight: 600;
+}
+.search-btn{
+    background-color: #35b8fc;
+    border: none;
+    color: #fff;
+}
+.search-btn:hover{
+    background-color: #04a6fa;    
+}
+.brewery-info a{
+    color: #36187d;
+    text-decoration: none;
+    font-weight: 600;
+}
+.err-cls{
+    margin: 0;
+}
+/*************************** Responsive Section **************************/
+@media screen and (max-width: 1200px){
+    .brewery-info{
+        padding: 10px !important;
+    }
+    .content-sec{
+        min-height: 350px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .search-section{
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .search-section{
+        width: 80% !important;
+    }
+}
