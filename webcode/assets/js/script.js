@@ -1,20 +1,20 @@
 let page    = 1;
 let perpage = 15;
+
 let fetchData = async (val = '') => {
     try{
         let api = '';
-        if(val){
-            api = `https://api.openbrewerydb.org/breweries/search?query=${val}`;
+        if(val){ // check search text value
+            api = `https://api.openbrewerydb.org/breweries/search?query=${val}`; // Search api url
         }else{
-            api = `https://api.openbrewerydb.org/breweries?page=${page}&per_page=${perpage}`;
+            api = `https://api.openbrewerydb.org/breweries?page=${page}&per_page=${perpage}`;  // get all breweries api
         }
         
         let res = await fetch(api);
         let data = await res.json();
-        //console.log(data);
 
-        document.querySelector('.main-content').innerHTML = '';
-        document.querySelector(".main-content").style.opacity = 1;
+        document.querySelector('.main-content').innerHTML = '';  // empty the main content area
+        document.querySelector(".main-content").style.opacity = 1; // set opacity
         let head = document.createElement('h3');
         head.setAttribute('class','text-center')
         head.innerHTML = 'Breweries Information';
@@ -26,19 +26,19 @@ let fetchData = async (val = '') => {
         searchtext.innerHTML = `Search text: `;
         searchdiv.append(searchtext);
         document.querySelector('.main-content').append(searchdiv);
-        if(val){
+        if(val){ // place search text value
             searchtext.innerHTML = `Search text: "${val}"`;
             searchdiv.append(searchtext);
             document.querySelector('.main-content').append(searchdiv);
         }
 
-        if(data.length > 0){
-            for(let i of data){
+        if(data.length > 0){  // check output length
+            for(let i of data){ // looping the data output - start
                 let content_element = document.createElement('div');
                 content_element.setAttribute('class','col-12 col-md-6 col-lg-4 brewery-info');
 
+                // set the values
                 let info = `<div class="content-sec">
-                            
                             <p><span class='info-cls'>Breweries Name: </span><span class='ans-cls'>${i.name}</span></p>
                             <p><span class='info-cls'>Breweries Type: </span><span class='ans-cls'>${i.brewery_type}</span></p>
                             <p><span class='info-cls'>Address: </span><span class='ans-cls'>${i.street},  ${i.city} - ${i.postal_code}, ${i.state} </span></p>`;
@@ -49,10 +49,10 @@ let fetchData = async (val = '') => {
                             }
                             info += `<p><span class='info-cls'>Phone Number: </span><span class='ans-cls'>${i.phone}</span></p>
                             </div>`;
-                //console.log(info)
+
                 content_element.innerHTML = info;
                 document.querySelector('.main-content').append(content_element)
-            }
+            }  // looping the data output - end
         }else{
             let textarea = document.createElement('p');
             textarea.setAttribute('class','text-center text-danger');
@@ -65,8 +65,10 @@ let fetchData = async (val = '') => {
     
 }
 
-fetchData();
+fetchData();  // function call
 
+
+/**** search text - button click function ****/
 let ele = document.querySelector('.search-btn');
 ele.addEventListener('click', function(){
     let text = document.querySelector('.searchtext');
@@ -75,3 +77,4 @@ ele.addEventListener('click', function(){
     document.querySelector(".main-content").style.opacity = 0.5;
     fetchData(val);
 });
+/**** search text - button click function ****/
