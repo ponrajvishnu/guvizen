@@ -1,7 +1,7 @@
 const API_KEY = "21e337e273333ffd002b68fcfd0dd9a3";
 
 let fetchAPI = async(city) => {
-    let api = `http://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`;
+    let api = `https://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`;
 
     let data = await fetch(api);
     let res = await data.json();

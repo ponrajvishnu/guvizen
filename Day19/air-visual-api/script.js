@@ -78,8 +78,3 @@ ele.addEventListener('click',function(){
         fetchData(stateText,countryText);
     }
 });
-
-let tag = document.querySelector('.near-city');
-tag.addEventListener('click',function(){
-    
-});
