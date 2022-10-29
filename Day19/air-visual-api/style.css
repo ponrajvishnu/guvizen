@@ -1,0 +1,41 @@
+body{
+    font-size: 16px;
+    color: #26282b;
+    line-height: 1.8em;
+}
+.title{
+    color: #565594;
+}
+.search-section .search-area{
+    width: 50%;
+    margin: 0 auto;
+}
+.search-btn{
+    background: #583bb6;
+    border-color: #583bb6;
+    color: #fff;
+}
+.search-btn:hover{
+    background-color: #583bb6;
+    border-color: rgba(255,255,255,.4);
+    box-shadow: none;
+    color: #fff;
+}
+.para-sec, .sub-title{
+    color: #7b88a8;
+}
+input[type="text"]{
+    width: 100%;
+    height: 48px;
+    padding: 16px 56px 16px 16px;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+/*************************** Responsive Section **************************/
+@media screen and (max-width: 991px){
+    .search-section .search-area{
+        width: 100%;
+    }
+}

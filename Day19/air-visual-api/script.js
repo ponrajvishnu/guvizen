@@ -21,7 +21,7 @@ let fetchData = async (state = '',country = '') =>  {
         document.querySelector('.main-content').innerHTML = '';
         if(result.status == 'success'){
             let title = document.createElement('h4');
-            title.setAttribute('class','text-left');
+            title.setAttribute('class','text-left sub-title');
             if(state != '' && country != ''){
                 title.innerHTML = 'List supported cities in a state:';
             }else{
@@ -62,16 +62,17 @@ ele.addEventListener('click',function(){
     let countryText = document.querySelector('.searchcountry').value;
 
     let errPara = '';
-    if(stateText == ''){
-        errPara = document.createElement('p');
-        errPara.setAttribute('class','text-center text-danger');
-        errPara.innerHTML = 'Please enter state';
-        document.querySelector('.err-section').append(errPara)
-    }else if(countryText == ''){
+    if(countryText == ''){
         document.querySelector('.err-section').innerHTML = '';
         errPara = document.createElement('p');
         errPara.setAttribute('class','text-center text-danger');
         errPara.innerHTML = 'Please enter country';
+        document.querySelector('.err-section').append(errPara)
+    }else if(stateText == ''){
+        document.querySelector('.err-section').innerHTML = '';
+        errPara = document.createElement('p');
+        errPara.setAttribute('class','text-center text-danger');
+        errPara.innerHTML = 'Please enter state';
         document.querySelector('.err-section').append(errPara)
     }else{
         document.querySelector('.err-section').innerHTML = '';
