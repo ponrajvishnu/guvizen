@@ -16,6 +16,7 @@ let fetchAPI = async(city) => {
 
         document.querySelector('.main-content').append(err);
     }else{
+        document.querySelector('.err-message').innerHTML = '';
         let head = document.createElement('h4');
         head.setAttribute('class','head-title');
         head.innerHTML = `${res.request.type} - ${res.request.query}`;
@@ -58,8 +59,13 @@ let fetchAPI = async(city) => {
 let ele = document.querySelector('.search-btn');
 ele.addEventListener('click',function(){
     let city = document.querySelector('.searchcity').value;
+    
     if(city == ''){
-        alert('Please enter city');
+        let err = document.createElement('p');
+        err.setAttribute('class','text-center text-danger');
+        err.innerHTML = 'Please enter city name';
+
+        document.querySelector('.err-message').append(err);
     }else{
         fetchAPI(city);
     }
