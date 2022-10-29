@@ -1,13 +1,14 @@
 const API_KEY = "21e337e273333ffd002b68fcfd0dd9a3";
 
 let fetchAPI = async(city) => {
-    let api = `https://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`;
+    let api = `http://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`;
 
     let data = await fetch(api);
     let res = await data.json();
     console.log(res);
 
     document.querySelector('.main-content').innerHTML = '';
+    document.querySelector('.err-message').innerHTML = '';
 
     if(res.success == false){
         let err = document.createElement('p');
@@ -16,7 +17,6 @@ let fetchAPI = async(city) => {
 
         document.querySelector('.main-content').append(err);
     }else{
-        document.querySelector('.err-message').innerHTML = '';
         let head = document.createElement('h4');
         head.setAttribute('class','head-title');
         head.innerHTML = `${res.request.type} - ${res.request.query}`;
