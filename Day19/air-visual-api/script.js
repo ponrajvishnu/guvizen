@@ -4,9 +4,9 @@ let fetchData = async (state = '',country = '') =>  {
     try{
         let api = '';
         if(state != '' && country != ''){
-            api = `http://api.airvisual.com/v2/cities?state=${state}&country=${country}&key=${API_KEY}`;
+            api = `https://api.airvisual.com/v2/cities?state=${state}&country=${country}&key=${API_KEY}`;
         }else{
-            api = `http://api.airvisual.com/v2/countries?key=${API_KEY}`;
+            api = `https://api.airvisual.com/v2/countries?key=${API_KEY}`;
         }
         
         let data = await fetch(
