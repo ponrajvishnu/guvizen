@@ -1,0 +1,26 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+.search-btn{
+    background: #dc3545;
+    color: #fff;
+    border: none;
+}
+.search-btn:hover,.search-btn:focus-visible{
+    background: #dc3545 !important;
+    border: none !important;
+}
+.parent-div p{
+    margin: 7px 0px;
+}
+.head-title{
+    color: #dc3545;
+    font-size: 30px;
+    font-weight: 600;
+}
+h6{
+    color: #00ffff;
+    font-size: 18px;
+    font-weight: 600;
+}
