@@ -5,7 +5,7 @@ let fetchData = async (val = '') => {
     try{
         let api = '';
         if(val){ // check search text value
-            api = `https://api.openbrewerydb.org/breweries/search?query=${val}`; // Search api url
+            api = `https://api.openbrewerydb.org/breweries?by_name=${val}`; // Search api url
         }else{
             api = `https://api.openbrewerydb.org/breweries?page=${page}&per_page=${perpage}`;  // get all breweries api
         }
